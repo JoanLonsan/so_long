@@ -1,0 +1,36 @@
+· How to create XPM files:
+	https://knowledge.broadcom.com/external/article/185090/an-xpm-format-image-file-is-required-to.html
+
+	Size: 640 x 480
+	Max Colors: 15
+	RGB: 8 bit ONLY!
+	BIOS, not UEFI BIOS.
+
+· Resolution
+Below are some general guidelines on how to how to use the ImageMagick convert utility to convert an existing image to XPM format and how to use the GNU Image Manipulation Program (GIMP) to create a new XPM image.
+
+	- Converting an image with ImageMagick convert -
+ImageMagick is a free and open source application that can be downloaded here. In a Linux environment, ImageMagick can be installed using the Linux distribution's package manager.
+
+If you have an existing image in a popular format such as PNG, JPEG or GIF you can convert it using the ImageMagick convert utility. For example, if your source file is image.png and you wish to create image.xpm run this command:
+
+convert -depth 8 -colors 16 -resize 640x480 image.png image.xpm
+
+If you wish to create a new image file you can do so using any image editing application. For example, Microsoft Paint. To change the image size in Paint, do the following:
+
+Click on File / Properties.
+Enter a width of 640 and a height of 480 pixels and click OK.
+
+	- Creating an image with GIMP -
+
+1.  Open GIMP.
+2.  Click File/New.
+3.  Select 640x480 from the Template dropdown and click OK.
+4.  Click File/Open As Layers, browse to your image file and click Open.
+5.  Click OK on the Render Scalable Vector Graphics page.
+6.  Click Image/Mode/Indexed.
+7.  Change the Maximum number of colors: from 255 to 15 and click the Convert button.
+8.  Click on Image/Mode/RGB.
+9.  Click on Image/Merge Visible Layers and click the Merge button.
+10. Optionally, click File/Save to save the image in XCF format.
+11. Click File/Export As and save the file as an X PixMap image (*.xpm).
